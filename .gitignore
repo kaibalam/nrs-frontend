@@ -1,0 +1,60 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Logs
+logs
+*.log
+*.log.*
+*.out
+*.pid
+*.seed
+*.pid.lock
+
+# Build output
+dist/
+build/
+*.local
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+
+# Env files
+.env.local
+.env.*.local
+.env
+
+# Coverage
+coverage/
+*.lcov
+
+# Cache
+.cache/
+.temp/
+.tmp/
+.eslintcache
+.stylelintcache
+
+# Testing
+/jest-report/
+/cypress/screenshots/
+/cypress/videos/
+/cypress/downloads/
+
+# Optional build cache
+vite.config.ts.timestamp-*
+vite.config.js.timestamp-*

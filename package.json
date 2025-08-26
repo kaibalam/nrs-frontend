@@ -1,0 +1,31 @@
+{
+  "name": "vue-nrs-test",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@primeuix/themes": "^1.2.3",
+    "@primevue/auto-import-resolver": "^4.3.7",
+    "@primevue/forms": "^4.3.7",
+    "autoprefixer": "^10.4.21",
+    "axios": "^1.11.0",
+    "postcss": "^8.5.6",
+    "primeflex": "^4.0.0",
+    "primeicons": "^7.0.0",
+    "primevue": "^4.3.7",
+    "tailwindcss": "^4.1.12",
+    "tailwindcss-primeui": "^0.6.1",
+    "unplugin-vue-components": "^29.0.0",
+    "vue": "^3.5.18"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "vite": "^7.1.2"
+  },
+  "main": "src/App.vue"
+}
