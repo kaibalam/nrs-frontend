@@ -1,58 +1,41 @@
 <template>
-    <div class="mt-4">
-        <h3 class="mb-2">States of {{ country.countryName }}</h3>
-
-        <DataTable :value="rows" :loading="loading" dataKey="id" class="w-full" responsiveLayout="scroll">
-            <Column field="stateName" header="Nombre" sortable />
-            <Column field="population" header="Código" />
-            <Row />
-        </DataTable>
+    <div class="card" style="width: 50%; position:inherit;" >
+        <h2 class="text-xl font-semibold mb-0">States of {{ country }}</h2>
+        <DataGrid :items="states" :loading="loading" />
     </div>
 </template>
 
 <script setup>
-import { ref, watch, onMounted } from 'vue';
-import DataTable from 'primevue/datatable';
-import Column from 'primevue/column';
-import Row from 'primevue/row';
-import axios from 'axios';
+import { ref, watch } from "vue";
+import DataGrid from './ui/DataGrid.vue';
+import { fetchStatesPopulation } from "../services/catalogServices";
 
 const props = defineProps({
     country: {
-        type: Object,
-        required: true
+        type: [String, Number, null],
+        default: ''
     }
-});
+})
 
-const rows = ref([]);
+const states = ref([]);
 const loading = ref(false);
 
-console.log(country);
-
-
-
-async function loadData() {
-    loading.value = true;
-    try {
-
-        const resp = await axios.get(`http://localhost:8080/api/states/list/${props.country.countryName}/population`);
-        rows.value = resp.data
-        console.log(resp);
-    } catch (err) {
-        console.log("Error cargando counties", err);
-        rows.value = []
-    } finally {
-        loading.value = false;
-    }
-}
-
-onMounted(loadData);
-
-// recargar cuando cambie el país
-watch(
-    () => props.country,
-    () => loadData(),
-    { deep: true, immediate: true }
+watch(() => props.country,
+    async (newCountry) => {
+        if (!newCountry) return;
+        loading.value = true;
+        try {
+            console.log(newCountry);
+            const response = await fetchStatesPopulation(newCountry);
+            console.log(response);
+            states.value = response;
+        } catch (error) {
+            console.log(`Error getting states populations [ ${error}]`);
+        } finally {
+            loading.value = false;
+        }
+    },
+    { immediate: true }
 );
 
 
