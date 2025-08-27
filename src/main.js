@@ -13,7 +13,7 @@ import App from "./App.vue";
 import ThemeSwitcher from './components/ThemeSwitcher.vue';
 import Noir from './presets/Noir.js';
 import AppState from './plugins/appState.js';
-import StyleClass from 'primevue/styleclass';
+import './style.css';
 
 const app = createApp(App);
 app.use(PrimeVue, {
