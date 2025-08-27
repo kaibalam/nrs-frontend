@@ -2,7 +2,6 @@
 
   <HeaderPage @selected="handleCountrySelected" />
     <CountryListTable v-if="selectedCountry" :country="selectedCountry" />
-    <CountryListTable v-if="selectedCountry" :country="selectedCountry" />
 </template>
 
 <script setup>
