@@ -19,17 +19,4 @@ function handleCountrySelected(country) {
   selectedCountry.value = country;
 };
 
-onMounted(async() => {
-   try {
-            console.log('pais seleccionado desde app ' ,selectedCountry);
-            const response = await fetchStatesPopulation(selectedCountry);
-            console.log(response);
-            states.value = response;
-        } catch (error) {
-            console.log(`Error getting states populations [ ${error}]`);
-        } 
-})
-
-
-
 </script>

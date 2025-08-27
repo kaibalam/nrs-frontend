@@ -3,10 +3,6 @@
     v-model="selected" 
     :options="countries" 
     @update:modelValue="handleCountrySelected"/>
-
-    <p class="mt-4 text-gray-700">
-      Seleccionaste: <strong>{{ selected || '—' }}</strong>
-    </p>
 </template>
 
 <script setup>
