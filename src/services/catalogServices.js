@@ -11,3 +11,9 @@ export async function fetchStatesPopulation(country){
     console.log(data);
     return data;
 }
+
+export async function fetchCountiesByState(state){
+    const { data } = await api.get(`/counties/${state}`);
+    console.log(data);
+    return data;
+}

@@ -1,13 +1,15 @@
 <template>
 
   <HeaderPage @selected="handleCountrySelected" />
-    <CountryListTable v-if="selectedCountry" :country="selectedCountry" />
+    <!-- <CountryListTable v-if="selectedCountry" :country="selectedCountry" /> -->
+    <TableTest v-if="selectedCountry" :country="selectedCountry"/>
 </template>
 
 <script setup>
 import { onMounted, ref, watch } from "vue";
 import HeaderPage from './components/HeaderPage.vue';
 import CountryListTable from './components/CountryListTable.vue';
+import TableTest from './components/TableTest.vue'
 import { fetchStatesPopulation } from "./services/catalogServices";
 
 
